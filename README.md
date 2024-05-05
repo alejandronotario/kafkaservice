@@ -45,6 +45,7 @@ python consumer.py
 #terminal2
 python producer.py
 ```
+Nota: para que funcione se debe tener cuenta de OpenAI e incluir la API KEY personal.
 ## Consideraciones
 
 La idea de esta aplicación en producción con AWS es la siguiente:
