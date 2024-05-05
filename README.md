@@ -3,10 +3,10 @@
 ## Alcance
 
 Aplicación que toma ficheros de audio para transcribirlos y añadirlos en un fichero .csv. 
-
-Se trata de una simulación en local de una tranferencia de audios que entrarían en tiempo real según llaman los
+Los audios se necesitan en formato texto ya que serán la entrada de modelos de clasificación, sentimiento, contenido...
+Se trata de una simulación en local de una transferencia de audios que entrarían en tiempo real según llaman los
 clientes de una aseguradora para abrir siniestros. La canalización va mediante un tópico "llamadas", son una sistema
-productor-consumidor kafka. Se ha incluido para el la emulación unos ficheros audio en español de poco tamaño. 
+productor-consumidor kafka. Se ha incluido para la emulación unos ficheros audio en español de poco tamaño. 
 
 ## Componentes
 
@@ -51,10 +51,10 @@ La idea de esta aplicación en producción con AWS es la siguiente:
 
 ```mermaid
 flowchart LR
-    A[S3] --> B(kafka producer)
+    A[S3 audios] --> B(kafka producer)
     B(kafka producer) --> C(TOPIC)
     C(TOPIC) --> D(kafka consumer)
-    D(kafka consumer) --> E(DynamoDB)
+    D(kafka consumer) --> E(DynamoDB textos)
 ```
 
 
